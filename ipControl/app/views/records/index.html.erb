@@ -1,0 +1,81 @@
+<h1>Listing records</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Oblast</th>
+      <th>Rayon</th>
+      <th>Sovet</th>
+      <th>Pynkt</th>
+      <th>Street</th>
+      <th>House</th>
+      <th>Korpus</th>
+      <th>Post index</th>
+      <th>Longtitude</th>
+      <th>Description</th>
+      <th>Purpose</th>
+      <th>Firewall</th>
+      <th>Proxy</th>
+      <th>Vpn</th>
+      <th>Antivirus</th>
+      <th>Technology</th>
+      <th>Speed</th>
+      <th>Connection phone</th>
+      <th>Ce</th>
+      <th>Pe</th>
+      <th>Ipadress</th>
+      <th>Visibility</th>
+      <th>Contact phone</th>
+      <th>Tarifff</th>
+      <th>Provider</th>
+      <th>Details</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @records.each do |record| %>
+      <tr>
+        <td><%= record.name %></td>
+        <td><%= record.type %></td>
+        <td><%= record.oblast %></td>
+        <td><%= record.rayon %></td>
+        <td><%= record.sovet %></td>
+        <td><%= record.pynkt %></td>
+        <td><%= record.street %></td>
+        <td><%= record.house %></td>
+        <td><%= record.korpus %></td>
+        <td><%= record.post_index %></td>
+        <td><%= record.longtitude %></td>
+        <td><%= record.description %></td>
+        <td><%= record.purpose %></td>
+        <td><%= record.firewall %></td>
+        <td><%= record.proxy %></td>
+        <td><%= record.vpn %></td>
+        <td><%= record.antivirus %></td>
+        <td><%= record.technology %></td>
+        <td><%= record.speed %></td>
+        <td><%= record.connection_phone %></td>
+        <td><%= record.ce %></td>
+        <td><%= record.pe %></td>
+        <td><%= record.ipadress %></td>
+        <td><%= record.visibility %></td>
+        <td><%= record.contact_phone %></td>
+        <td><%= record.tarifff %></td>
+        <td><%= record.provider %></td>
+        <td><%= record.details %></td>
+        <td><%= link_to 'Show', record %></td>
+        <td><%= link_to 'Edit', edit_record_path(record) %></td>
+        <td><%= link_to 'Destroy', record, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Record', new_record_path %>

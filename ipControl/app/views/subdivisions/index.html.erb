@@ -1,0 +1,27 @@
+<h1>Listing subdivisions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @subdivisions.each do |subdivision| %>
+      <tr>
+        <td><%= subdivision.name %></td>
+        <td><%= link_to 'Show', subdivision %></td>
+        <td><%= link_to 'Edit', edit_subdivision_path(subdivision) %></td>
+        <td><%= link_to 'Destroy', subdivision, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Subdivision', new_subdivision_path %>

@@ -1,0 +1,61 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  type: 
+  oblast: MyString
+  rayon: MyString
+  sovet: MyString
+  pynkt: MyString
+  street: MyString
+  house: MyString
+  korpus: MyString
+  post_index: 
+  longtitude: 9.99
+  description: MyString
+  purpose: MyString
+  firewall: MyString
+  proxy: MyString
+  vpn: MyString
+  antivirus: MyString
+  technology: MyString
+  speed: 1
+  connection_phone: MyString
+  ce: MyString
+  pe: MyString
+  ipadress: MyString
+  visibility: MyString
+  contact_phone: MyString
+  tarifff: MyString
+  provider: MyString
+  details: MyString
+
+two:
+  name: MyString
+  type: 
+  oblast: MyString
+  rayon: MyString
+  sovet: MyString
+  pynkt: MyString
+  street: MyString
+  house: MyString
+  korpus: MyString
+  post_index: 
+  longtitude: 9.99
+  description: MyString
+  purpose: MyString
+  firewall: MyString
+  proxy: MyString
+  vpn: MyString
+  antivirus: MyString
+  technology: MyString
+  speed: 1
+  connection_phone: MyString
+  ce: MyString
+  pe: MyString
+  ipadress: MyString
+  visibility: MyString
+  contact_phone: MyString
+  tarifff: MyString
+  provider: MyString
+  details: MyString

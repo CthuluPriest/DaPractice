@@ -1,0 +1,129 @@
+<%= form_for(@record) do |f| %>
+  <% if @record.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@record.errors.count, "error") %> prohibited this record from being saved:</h2>
+
+      <ul>
+      <% @record.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :type %><br>
+    <%= f.text_field :type %>
+  </div>
+  <div class="field">
+    <%= f.label :oblast %><br>
+    <%= f.text_field :oblast %>
+  </div>
+  <div class="field">
+    <%= f.label :rayon %><br>
+    <%= f.text_field :rayon %>
+  </div>
+  <div class="field">
+    <%= f.label :sovet %><br>
+    <%= f.text_field :sovet %>
+  </div>
+  <div class="field">
+    <%= f.label :pynkt %><br>
+    <%= f.text_field :pynkt %>
+  </div>
+  <div class="field">
+    <%= f.label :street %><br>
+    <%= f.text_field :street %>
+  </div>
+  <div class="field">
+    <%= f.label :house %><br>
+    <%= f.text_field :house %>
+  </div>
+  <div class="field">
+    <%= f.label :korpus %><br>
+    <%= f.text_field :korpus %>
+  </div>
+  <div class="field">
+    <%= f.label :post_index %><br>
+    <%= f.text_field :post_index %>
+  </div>
+  <div class="field">
+    <%= f.label :longtitude %><br>
+    <%= f.text_field :longtitude %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label :purpose %><br>
+    <%= f.text_field :purpose %>
+  </div>
+  <div class="field">
+    <%= f.label :firewall %><br>
+    <%= f.text_field :firewall %>
+  </div>
+  <div class="field">
+    <%= f.label :proxy %><br>
+    <%= f.text_field :proxy %>
+  </div>
+  <div class="field">
+    <%= f.label :vpn %><br>
+    <%= f.text_field :vpn %>
+  </div>
+  <div class="field">
+    <%= f.label :antivirus %><br>
+    <%= f.text_field :antivirus %>
+  </div>
+  <div class="field">
+    <%= f.label :technology %><br>
+    <%= f.text_field :technology %>
+  </div>
+  <div class="field">
+    <%= f.label :speed %><br>
+    <%= f.number_field :speed %>
+  </div>
+  <div class="field">
+    <%= f.label :connection_phone %><br>
+    <%= f.text_field :connection_phone %>
+  </div>
+  <div class="field">
+    <%= f.label :ce %><br>
+    <%= f.text_field :ce %>
+  </div>
+  <div class="field">
+    <%= f.label :pe %><br>
+    <%= f.text_field :pe %>
+  </div>
+  <div class="field">
+    <%= f.label :ipadress %><br>
+    <%= f.text_field :ipadress %>
+  </div>
+  <div class="field">
+    <%= f.label :visibility %><br>
+    <%= f.text_field :visibility %>
+  </div>
+  <div class="field">
+    <%= f.label :contact_phone %><br>
+    <%= f.text_field :contact_phone %>
+  </div>
+  <div class="field">
+    <%= f.label :tarifff %><br>
+    <%= f.text_field :tarifff %>
+  </div>
+  <div class="field">
+    <%= f.label :provider %><br>
+    <%= f.text_field :provider %>
+  </div>
+  <div class="field">
+    <%= f.label :details %><br>
+    <%= f.text_field :details %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
