@@ -18,7 +18,7 @@ class RecordsControllerTest < ActionController::TestCase
 
   test "should create record" do
     assert_difference('Record.count') do
-      post :create, record: { antivirus: @record.antivirus, ce: @record.ce, connection_phone: @record.connection_phone, contact_phone: @record.contact_phone, description: @record.description, details: @record.details, firewall: @record.firewall, house: @record.house, ipadress: @record.ipadress, korpus: @record.korpus, longtitude: @record.longtitude, name: @record.name, oblast: @record.oblast, pe: @record.pe, post_index: @record.post_index, provider: @record.provider, proxy: @record.proxy, purpose: @record.purpose, pynkt: @record.pynkt, rayon: @record.rayon, sovet: @record.sovet, speed: @record.speed, street: @record.street, tarifff: @record.tarifff, technology: @record.technology, type: @record.type, visibility: @record.visibility, vpn: @record.vpn }
+      post :create, record: { antivirus: @record.antivirus, ce: @record.ce, connection_phone: @record.connection_phone, contact_phone: @record.contact_phone, description: @record.description, details: @record.details, firewall: @record.firewall, house: @record.house, ipadress: @record.ipadress, korpus: @record.korpus, latitude: @record.latitude, longtitude: @record.longtitude, name: @record.name, oblast: @record.oblast, pe: @record.pe, post_index: @record.post_index, provider: @record.provider, proxy: @record.proxy, purpose: @record.purpose, pynkt: @record.pynkt, rayon: @record.rayon, sovet: @record.sovet, speed: @record.speed, street: @record.street, tarifff: @record.tarifff, technology: @record.technology, type: @record.type, visibility: @record.visibility, vpn: @record.vpn }
     end
 
     assert_redirected_to record_path(assigns(:record))
@@ -35,7 +35,7 @@ class RecordsControllerTest < ActionController::TestCase
   end
 
   test "should update record" do
-    patch :update, id: @record, record: { antivirus: @record.antivirus, ce: @record.ce, connection_phone: @record.connection_phone, contact_phone: @record.contact_phone, description: @record.description, details: @record.details, firewall: @record.firewall, house: @record.house, ipadress: @record.ipadress, korpus: @record.korpus, longtitude: @record.longtitude, name: @record.name, oblast: @record.oblast, pe: @record.pe, post_index: @record.post_index, provider: @record.provider, proxy: @record.proxy, purpose: @record.purpose, pynkt: @record.pynkt, rayon: @record.rayon, sovet: @record.sovet, speed: @record.speed, street: @record.street, tarifff: @record.tarifff, technology: @record.technology, type: @record.type, visibility: @record.visibility, vpn: @record.vpn }
+    patch :update, id: @record, record: { antivirus: @record.antivirus, ce: @record.ce, connection_phone: @record.connection_phone, contact_phone: @record.contact_phone, description: @record.description, details: @record.details, firewall: @record.firewall, house: @record.house, ipadress: @record.ipadress, korpus: @record.korpus, latitude: @record.latitude, longtitude: @record.longtitude, name: @record.name, oblast: @record.oblast, pe: @record.pe, post_index: @record.post_index, provider: @record.provider, proxy: @record.proxy, purpose: @record.purpose, pynkt: @record.pynkt, rayon: @record.rayon, sovet: @record.sovet, speed: @record.speed, street: @record.street, tarifff: @record.tarifff, technology: @record.technology, type: @record.type, visibility: @record.visibility, vpn: @record.vpn }
     assert_redirected_to record_path(assigns(:record))
   end
 

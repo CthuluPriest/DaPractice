@@ -10,7 +10,8 @@ one:
   street: MyString
   house: MyString
   korpus: MyString
-  post_index: 
+  post_index: 1
+  latitude: 9.99
   longtitude: 9.99
   description: MyString
   purpose: MyString
@@ -40,7 +41,8 @@ two:
   street: MyString
   house: MyString
   korpus: MyString
-  post_index: 
+  post_index: 1
+  latitude: 9.99
   longtitude: 9.99
   description: MyString
   purpose: MyString

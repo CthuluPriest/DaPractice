@@ -10,7 +10,8 @@ class CreateRecords < ActiveRecord::Migration
       t.string :street
       t.string :house
       t.string :korpus
-      t.integerlatitude :post_index
+      t.integer :post_index
+      t.decimal :latitude
       t.decimal :longtitude
       t.string :description
       t.string :purpose
