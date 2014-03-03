@@ -21,3 +21,11 @@
 
 en:
   hello: "Hello world"
+
+  activerecord:
+    models:
+      admin_user: "Пользователь"
+    attributes:
+      admin_user:
+        email: "Mail"
+

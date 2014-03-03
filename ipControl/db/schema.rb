@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 20140228222143) do
 
   create_table "records", force: true do |t|
     t.string   "name"
-    t.string   "type"
+    t.string   "subdivision_type"
     t.string   "oblast"
     t.string   "rayon"
     t.string   "sovet"
@@ -56,9 +56,9 @@ ActiveRecord::Schema.define(version: 20140228222143) do
     t.string   "street"
     t.string   "house"
     t.string   "korpus"
-    t.integer  "post_index"
-    t.decimal  "latitude",         precision: 10, scale: 0
-    t.decimal  "longtitude",       precision: 10, scale: 0
+    t.float    "post_index"
+    t.float    "latitude"
+    t.float    "longtitude"
     t.string   "description"
     t.string   "purpose"
     t.string   "firewall"
@@ -66,7 +66,7 @@ ActiveRecord::Schema.define(version: 20140228222143) do
     t.string   "vpn"
     t.string   "antivirus"
     t.string   "technology"
-    t.integer  "speed"
+    t.float    "speed"
     t.string   "connection_phone"
     t.string   "ce"
     t.string   "pe"
