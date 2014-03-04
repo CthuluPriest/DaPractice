@@ -1,3 +1,3 @@
 class Record < ActiveRecord::Base
-	has_many :subdivisions
+	  validates :name, :subdivision_type, :oblast, :rayon, :pynkt, :street, :house, :post_index, :purpose, :technology, :tarifff, :provider, presence: true
 end

@@ -1,34 +1,35 @@
 class CreateRecords < ActiveRecord::Migration
   def change
     create_table :records do |t|
-      t.string :name
-      t.string :subdivision_type
-      t.string :oblast
-      t.string :rayon
+      t.string :name, null: false
+      t.string :subdivision_type, null: false
+      t.string :subdivision_same_building
+      t.string :oblast, null: false
+      t.string :rayon, null: false
       t.string :sovet
-      t.string :pynkt
-      t.string :street
-      t.string :house
+      t.string :pynkt, null: false
+      t.string :street, null: false
+      t.string :house, null: false
       t.string :korpus
-      t.float :post_index
+      t.integer :post_index, null: false
       t.float :latitude
       t.float :longtitude
       t.string :description
-      t.string :purpose
+      t.string :purpose, null: false
       t.string :firewall
       t.string :proxy
       t.string :vpn
       t.string :antivirus
-      t.string :technology
-      t.float :speed
+      t.string :technology, null: false
+      t.integer :speed
       t.string :connection_phone
       t.string :ce
       t.string :pe
       t.string :ipadress
       t.string :visibility
       t.string :contact_phone
-      t.string :tarifff
-      t.string :provider
+      t.string :tarifff,null: false
+      t.string :provider, null: false
       t.string :details
 
       t.timestamps

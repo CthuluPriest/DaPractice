@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140228222143) do
+ActiveRecord::Schema.define(version: 20140304191301) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -46,42 +46,67 @@ ActiveRecord::Schema.define(version: 20140228222143) do
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
 
+  create_table "oblasts", force: true do |t|
+    t.string   "name",       null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "rayons", force: true do |t|
+    t.string   "name",       null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "records", force: true do |t|
-    t.string   "name"
-    t.string   "subdivision_type"
-    t.string   "oblast"
-    t.string   "rayon"
+    t.string   "name",                      null: false
+    t.string   "subdivision_type",          null: false
+    t.string   "subdivision_same_building"
+    t.string   "oblast",                    null: false
+    t.string   "rayon",                     null: false
     t.string   "sovet"
-    t.string   "pynkt"
-    t.string   "street"
-    t.string   "house"
+    t.string   "pynkt",                     null: false
+    t.string   "street",                    null: false
+    t.string   "house",                     null: false
     t.string   "korpus"
-    t.float    "post_index"
+    t.integer  "post_index",                null: false
     t.float    "latitude"
     t.float    "longtitude"
     t.string   "description"
-    t.string   "purpose"
+    t.string   "purpose",                   null: false
     t.string   "firewall"
     t.string   "proxy"
     t.string   "vpn"
     t.string   "antivirus"
-    t.string   "technology"
-    t.float    "speed"
+    t.string   "technology",                null: false
+    t.integer  "speed"
     t.string   "connection_phone"
     t.string   "ce"
     t.string   "pe"
     t.string   "ipadress"
     t.string   "visibility"
     t.string   "contact_phone"
-    t.string   "tarifff"
-    t.string   "provider"
+    t.string   "tarifff",                   null: false
+    t.string   "provider",                  null: false
     t.string   "details"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+  create_table "sovets", force: true do |t|
+    t.string   "name",       null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "subdivision_types", force: true do |t|
+    t.string   "name",       null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "subdivisions", force: true do |t|
-    t.string   "name"
+    t.string   "name",       null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
