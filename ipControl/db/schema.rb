@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140304191301) do
+ActiveRecord::Schema.define(version: 20140306171350) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -48,6 +48,24 @@ ActiveRecord::Schema.define(version: 20140304191301) do
 
   create_table "oblasts", force: true do |t|
     t.string   "name",       null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "providers", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "purposes", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "pynkts", force: true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -107,6 +125,18 @@ ActiveRecord::Schema.define(version: 20140304191301) do
 
   create_table "subdivisions", force: true do |t|
     t.string   "name",       null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tariffs", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "technologies", force: true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

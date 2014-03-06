@@ -73,16 +73,65 @@ ActiveAdmin.register Record do
 
   form do |f|
     f.inputs "Запись" do
-      f.input :name, :label => "Наименование подразделения", as: :select, 
-                                                            collection: Subdivision.pluck(:name), :include_blank => false
-      f.input :subdivision_type, :label => "Тип подразделения"
+      values = Subdivision.pluck(:name)
+      if values.size == 0 
+        f.input :name, :label => "Наименование подразделения", as: :select, 
+                                                            collection: values, :prompt => "Справочник пуст"
+      else
+        f.input :name, :label => "Наименование подразделения", as: :select, 
+                                                            collection: values, :include_blank => false
+      end
+
+      values = SubdivisionType.pluck(:name)
+      if values.size == 0 
+        f.input :subdivision_type, :label => "Тип подразделения", as: :select, 
+                                                            collection: values, :prompt => "Справочник пуст"
+      else
+        f.input :subdivision_type, :label => "Тип подразделения", as: :select, 
+                                                            collection: values, :include_blank => false
+      end
+
       f.input :subdivision_same_building, :label => "Подразделение в одном здании"
 
       f.inputs "Адрес" do
-        f.input :oblast, :label => "Область", as: :select, collection: Oblast.pluck(:name), :include_blank => false
-        f.input :rayon, :label => "Район", as: :select, collection: Rayon.pluck(:name), :include_blank => false
-        f.input :sovet, :label => "Сельский совет", as: :select, collection: Subdivision.pluck(:name), :include_blank => true
-        f.input :pynkt, :label => "Населенный пункт"
+        values = Oblast.pluck(:name)
+        if values.size == 0 
+          f.input :oblast, :label => "Область", as: :select, 
+                                                            collection: values, :prompt => "Справочник пуст"
+        else
+          f.input :oblast, :label => "Область", as: :select, 
+                                                            collection: values, :include_blank => false
+        end
+
+        values = Rayon.pluck(:name)
+        if values.size == 0 
+          f.input :rayon, :label => "Район", as: :select, 
+                                                            collection: values, :prompt => "Справочник пуст"
+        else
+          f.input :rayon, :label => "Район", as: :select, 
+                                                            collection: values, :include_blank => false
+        end
+
+
+        values = Sovet.pluck(:name)
+        if values.size == 0 
+          f.input :sovet, :label => "Сельский совет", as: :select, 
+                                                            collection: values, :prompt => "Справочник пуст"
+        else
+          f.input :sovet, :label => "Сельский совет", as: :select, 
+                                                            collection: values, :prompt => "Выберите значение"
+        end
+
+
+        values = Pynkt.pluck(:name)
+        if values.size == 0 
+          f.input :pynkt, :label => "Населенный пункт", as: :select, 
+                                                            collection: values, :prompt => "Справочник пуст"
+        else
+          f.input :pynkt, :label => "Населенный пункт", as: :select, 
+                                                            collection: values, :include_blank => false
+        end
+
         f.input :street, :label => "Улица"
         f.input :house, :label => "Номер дома"
         f.input :korpus, :label => "Корпус"
@@ -96,14 +145,32 @@ ActiveAdmin.register Record do
 
       f.inputs "Внешний канал связи" do
         f.input :description, :label => "Описание"
-        f.input :purpose, :label => "Цель использования"
+
+        values = Purpose.pluck(:name)
+        if values.size == 0 
+          f.input :purpose, :label => "Цель использования", as: :select, 
+                                                            collection: values, :prompt => "Справочник пуст"
+        else
+          f.input :purpose, :label => "Цель использования", as: :select, 
+                                                            collection: values, :include_blank => false
+        end
+
         f.input :firewall, :label => "Межсетевой экран"
         f.input :proxy, :label => "Прокси-сервер"
         f.input :vpn, :label => "VPN-сервер"
         f.input :antivirus, :label => "Антивирус"
       end
 
-      f.input :technology, :label => "Технология подключения"
+
+      values = Technology.pluck(:name)
+      if values.size == 0 
+        f.input :technology, :label => "Технология подключения", as: :select, 
+                                                            collection: values, :prompt => "Справочник пуст"
+      else
+        f.input :technology, :label => "Технология подключения", as: :select, 
+                                                            collection: values, :include_blank => false
+      end
+    
       f.input :speed, :label => "Скорость подключения"
       f.input :connection_phone, :label => "Телефон привязки"
 
@@ -115,8 +182,25 @@ ActiveAdmin.register Record do
       f.input :ipadress, :label => "IP адрес/сеть"
       f.input :visibility, :label => "Видимость точек"
       f.input :contact_phone, :label => "Контактный телефон"
-      f.input :tarifff, :label => "Тариф"
-      f.input :provider, :label => "Поставщик услуг"
+
+      values = Tariff.pluck(:name)
+      if values.size == 0 
+        f.input :tarifff, :label => "Тариф", as: :select, 
+                                                    collection: values, :prompt => "Справочник пуст"
+      else
+        f.input :tarifff, :label => "Тариф", as: :select, 
+                                                    collection: values, :include_blank => false
+      end
+
+      values = Provider.pluck(:name)
+      if values.size == 0 
+        f.input :provider, :label => "Поставщик услуг", as: :select, 
+                                                    collection: values, :prompt => "Справочник пуст"
+      else
+        f.input :provider, :label => "Поставщик услуг", as: :select, 
+                                                    collection: values, :include_blank => false
+      end
+ 
       f.input :details, :label => "Реквизиты договора"
       end
 
