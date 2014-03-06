@@ -109,7 +109,7 @@ ActiveAdmin.register Record do
                                                             collection: values, :prompt => "Справочник пуст"
         else
           f.input :rayon, :label => "Район", as: :select, 
-                                                            collection: values, :include_blank => false
+                                                            collection: values, :prompt => "Выберите значение"
         end
 
 
