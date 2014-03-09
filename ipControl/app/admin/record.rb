@@ -38,6 +38,8 @@ ActiveAdmin.register Record do
     # column "Тариф", :tarifff
     # column "Поставщик услуг", :provider
     # column "Реквизиты":, details
+
+    actions
   end
 
   filter :name, :label => "Наименование"
