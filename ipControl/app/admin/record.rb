@@ -1,8 +1,9 @@
 ActiveAdmin.register Record do
   menu :label => "Записи"
-  permit_params :name, :subdivision_type, :subdivision_same_building, :oblast, :rayon, :sovet, :pynkt, :street, :house, :korpus, :post_index, :latitude, :longtitude, 
-      :description, :purpose, :firewall, :proxy, :vpn, :antivirus, :technology, :speed, :connection_phone, 
-      :ce, :pe, :ipadress, :visibility, :contact_phone, :tarifff, :provider, :details
+  permit_params :name, :subdivision_type, :subdivision_same_building, :oblast, :rayon,
+                :sovet, :pynkt, :street, :house, :korpus, :post_index, :latitude, :longtitude, :description,
+                :purpose, :firewall, :proxy, :vpn, :antivirus, :technology, :speed, :connection_phone, 
+                :ce, :pe, :ipadress, :visibility, :contact_phone, :tarifff, :provider, :details, :ce_network, :pe_network
 
   index do
     selectable_column
@@ -176,9 +177,22 @@ ActiveAdmin.register Record do
       f.input :speed, :label => "Скорость подключения"
       f.input :connection_phone, :label => "Телефон привязки"
 
+      values = Wan.pluck(:wan)
       f.inputs "WAN/маска" do
-        f.input :ce, :label => "CE"
-        f.input :pe, :label => "PE"
+        if values.size == 0 
+          f.input :ce_network, label: "CE сеть", as: :select, 
+                               collection: values, prompt: "Справочник пуст"
+          f.input :pe_network, :label => "PE сеть", as: :select, 
+                               collection: values, prompt: 'Справочник пуст'
+        else
+          f.input :ce_network, label: "CE сеть", as: :select, 
+                               collection: values, prompt: 'Выберите значение'
+          f.input :ce, label: "Подсеть/Адрес CE", hint: "Подсеть или адрес должен входить в CE сеть"
+          
+          f.input :pe_network, :label => "PE сеть", as: :select, 
+                               collection: values, prompt: 'Выберите значение'
+          f.input :pe, label: "Подсеть/Адрес PE", hint: "Подсеть или адрес должен входить в PE сеть"
+        end
       end
 
       f.input :ipadress, :label => "IP адрес/сеть"
