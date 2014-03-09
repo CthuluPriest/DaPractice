@@ -5,7 +5,7 @@ class CreateRecords < ActiveRecord::Migration
       t.string :subdivision_type, null: false
       t.string :subdivision_same_building
       t.string :oblast, null: false
-      t.string :rayon, null: false
+      t.string :rayon
       t.string :sovet
       t.string :pynkt, null: false
       t.string :street, null: false
