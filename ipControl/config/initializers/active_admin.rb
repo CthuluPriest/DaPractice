@@ -114,6 +114,8 @@ ActiveAdmin.setup do |config|
 
 
   # == Admin Comments
+  config.allow_comments = false
+
   #
   # This allows your users to comment on any resource registered with Active Admin.
   #
