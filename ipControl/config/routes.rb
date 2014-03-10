@@ -1,4 +1,7 @@
 IpControl::Application.routes.draw do
+
+  root to: "admin/records#index"
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   resources :records

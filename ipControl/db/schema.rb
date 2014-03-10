@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 20140309121840) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.string   "role"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -81,7 +82,7 @@ ActiveRecord::Schema.define(version: 20140309121840) do
     t.string   "subdivision_type",          null: false
     t.string   "subdivision_same_building"
     t.string   "oblast",                    null: false
-    t.string   "rayon",                     null: false
+    t.string   "rayon"
     t.string   "sovet"
     t.string   "pynkt",                     null: false
     t.string   "street",                    null: false

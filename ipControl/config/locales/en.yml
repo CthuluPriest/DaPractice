@@ -1,31 +1,140 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
-
+  active_admin:
+    dashboard: Dashboard
+    dashboard_welcome:
+      welcome: "Welcome to Active Admin. This is the default dashboard page."
+      call_to_action: "To add dashboard sections, checkout 'app/admin/dashboard.rb'"
+    view: "Открыть"
+    edit: "Редактировать"
+    delete: "Удалить"
+    delete_confirmation: "Подтвердить удаление?"
+    new_model: "Создать %{model}"
+    create_model: "Создать %{model}"
+    edit_model: "Редактировать"
+    update_model: "Редактировать"
+    delete_model: "Удалить"
+    details: "%{model}"
+    cancel: "Отмена"
+    empty: "Empty"
+    previous: "Назад"
+    next: "Вперед"
+    download: "Скачать:"
+    has_many_new: "Add New %{model}"
+    has_many_delete: "Delete"
+    has_many_remove: "Remove"
+    filters:
+      buttons:
+        filter: "Отфильтровать"
+        clear: "Сбросить"
+      predicates:
+        contains: "Содержит"
+        equals: "Совпадает"
+        starts_with: "Начинается с"
+        ends_with: "Заканчивается на"
+        greater_than: "Больше чем"
+        less_than: "Меньше чем"
+    main_content: "Please implement %{model}#main_content to display content."
+    logout: "Logout"
+    powered_by: "Powered by magic"
+    sidebars:
+      filters: "Фильтры"
+    pagination:
+      empty: "Ничего не найдено"
+      one: "Displaying <b>1</b> %{model}"
+      one_page: "Displaying <b>all %{n}</b> %{model}"
+      multiple: "Displaying %{model} <b>%{from}&nbsp;-&nbsp;%{to}</b> of <b>%{total}</b> in total"
+      multiple_without_total: "Displaying %{model} <b>%{from}&nbsp;-&nbsp;%{to}</b>"
+      entry:
+        one: "entry"
+        other: "entries"
+    any: "Любая"
+    blank_slate:
+      content: "There are no %{resource_name} yet."
+      link: "Create one"
+    batch_actions:
+      button_label: "Выделенное"
+      default_confirmation: "Вы уверены?"
+      delete_confirmation: "Подтвердить удаление?"
+      succesfully_destroyed:
+        one: "Successfully destroyed 1 %{model}"
+        other: "Successfully destroyed %{count} %{plural_model}"
+      selection_toggle_explanation: "(Toggle Selection)"
+      link: "Create one"
+      action_label: "%{title} отмеченное"
+      labels:
+        destroy: "Удалить"
+    comments:
+      resource_type: "Resource Type"
+      author_type: "Author Type"
+      body: "Body"
+      author: "Author"
+      title: "Comment"
+      add: "Add Comment"
+      resource: "Resource"
+      no_comments_yet: "No comments yet."
+      author_missing: "Anonymous"
+      title_content: "Comments (%{count})"
+      errors:
+        empty_text: "Comment wasn't saved, text was empty."
+    devise:
+      username:
+        title: "Имя"
+      email:
+        title: "Email"
+      subdomain:
+        title: "Subdomain"
+      password: 
+        title: "Пароль"
+      sign_up:
+        title: "Sign up"
+        submit: "Sign up"
+      login:
+        title: "Login"
+        remember_me: "Запомнить"
+        submit: "Login"
+      reset_password:
+        title: "Забыли пароль?"
+        submit: "Сбросить пароль"
+      change_password:
+        title: "Изменение пароля"
+        submit: "Изменить пароль"
+      unlock:
+        title: "Resend unlock instructions"
+        submit: "Resend unlock instructions"
+      resend_confirmation_instructions:
+        title: "Resend confirmation instructions"
+        submit: "Resend confirmation instructions"
+      links:
+        sign_in: "Войти"
+        forgot_your_password: "Забыли пароль?"
+        sign_in_with_omniauth_provider: "Sign in with %{provider}"
+    access_denied:
+      message: "У Вас нет соответствующих прав."
+    index_list:
+      table: "Table"
+      block: "List"
+      grid: "Grid"
+      blog: "Blog"
   activerecord:
     models:
-      admin_user: "Пользователь"
-    attributes:
-      admin_user:
-        email: "Mail"
-
+      record: "запись"
+      admin_user: "пользователя"
+      subdivision: "подразделение"
+      subdivision_type: "тип подразделения"
+      oblast: "область"
+      rayon: "район"
+      sovet: "сельский совет"
+      pynkt: "населенный пункт"
+      purpose: "цель использования"
+      technology: "технологию подключения"
+      tariff: "тариф"
+      provider: "поставщика услуг"
+  formtastic:
+    :yes: 'Да'
+    :no: 'Нет'
+    :create: 'Создать %{model}'
+    :update: 'Обновить %{model}'
+    :submit: 'Submit %{model}'
+    :cancel: 'Cancel %{model}'
+    :reset: 'Reset %{model}'
+    :required: 'required'
