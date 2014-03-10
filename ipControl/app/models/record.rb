@@ -1,8 +1,8 @@
 class Record < ActiveRecord::Base
 	validates :name, :subdivision_type, :oblast, 
-            :pynkt, :street, :house, :post_index, :purpose, :technology, :tarifff, :provider, presence: true
+            :pynkt, :street, :house, :post_index, :purpose, :technology, :tarifff, :provider, :ce_network, :pe_network, presence: true
   
-  validates :ce, :pe, uniqueness: true
+  validates :ce, :pe, presence: true, uniqueness: true
   validate :correct_subnetwork
 
   private
