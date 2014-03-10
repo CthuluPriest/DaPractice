@@ -2,7 +2,7 @@ ActiveAdmin.register Technology do
   menu :parent => "Справочники", :label => "Тезнологии подключения", :priority => 8
   permit_params :name
 
-  	  index :title => "Тезнологии подключения" do
+  	  index :title => "Технологии подключения" do
 	    selectable_column
 	    id_column
 	    column "Название", :name

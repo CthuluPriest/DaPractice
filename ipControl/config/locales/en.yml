@@ -47,7 +47,7 @@ en:
       entry:
         one: "entry"
         other: "entries"
-    any: "Any"
+    any: "Любая"
     blank_slate:
       content: "There are no %{resource_name} yet."
       link: "Create one"
@@ -93,11 +93,11 @@ en:
         remember_me: "Запомнить"
         submit: "Login"
       reset_password:
-        title: "Forgot your password?"
-        submit: "Reset My Password"
+        title: "Забыли пароль?"
+        submit: "Сбросить пароль"
       change_password:
-        title: "Change your password"
-        submit: "Change my password"
+        title: "Изменение пароля"
+        submit: "Изменить пароль"
       unlock:
         title: "Resend unlock instructions"
         submit: "Resend unlock instructions"
@@ -105,8 +105,8 @@ en:
         title: "Resend confirmation instructions"
         submit: "Resend confirmation instructions"
       links:
-        sign_in: "Sign in"
-        forgot_your_password: "Forgot your password?"
+        sign_in: "Войти"
+        forgot_your_password: "Забыли пароль?"
         sign_in_with_omniauth_provider: "Sign in with %{provider}"
     access_denied:
       message: "У Вас нет соответствующих прав."
