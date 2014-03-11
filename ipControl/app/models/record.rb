@@ -9,41 +9,40 @@ class Record < ActiveRecord::Base
 
   def correct_subnetwork
     if ce.present? || ce_network.present?
-      errors.add(:ce, 'выбранная сеть не содержит данный ip-адрес(подсеть)') unless check_inclusion(ce_network, :ce)
+      errors.add(:ce, 'выбранная сеть не содержит данный ip-адрес(подсеть)') unless contained(ce_network, :ce)
     end
 
     if pe.present? || pe_network.present?
-      errors.add(:pe, 'выбранная сеть не содержит данный ip-адрес(подсеть)') unless check_inclusion(pe_network, :pe)
+      errors.add(:pe, 'выбранная сеть не содержит данный ip-адрес(подсеть)') unless contained(pe_network, :pe)
     end
   end
 
-  def check_inclusion(wan, edge)
+  # Количество хостов в подсети определяется как 2^(32-N)-2, где N — длина маски. 
+  def contained(wan, edge)
     ip = self.send(edge) # CE or PE value
     network = IPAddress::IPv4.new wan
-    hosts = network.hosts.map { |i| i.to_s } # all hosts in network
-    sub = IPAddress::IPv4.new ip
-    # Количество хостов в подсети определяется как 2^(32-N)-2, где N — длина маски. 
-    return false if sub.prefix < network.prefix
-    if sub.prefix == 32
-      (hosts.include? sub.address) && method_name(sub.address, edge)
-    else
-      subnet = sub.hosts.map { |e| e.to_s  }
-      # return false unless (subnet - hosts).size == 0 # all subnet elements must be in the host array
-      # end
-      (subnet - hosts).size == 0 # all subnet elements must be in the host array
-    end       
+    subnet = IPAddress::IPv4.new ip
+    # all subnet elements must be in the host array && subnets hosts not used
+    (network.include? subnet) && used?(wan, edge, subnet)
   rescue
-   errors.add(edge, 'неверно задан ip-адрес')
+   errors.add(edge, 'неверно задан ip-адрес') 
   end
-end
 
+  # def include?(oth)
+  #   @prefix <= oth.prefix and network_u32 == (oth.to_u32 & @prefix.to_u32)
+  # end
+  #
+  # def include_all?(*others)
+  #   others.all? {|oth| include?(oth)}
+  # end
 
-def method_name(new_ip, edge)
-  Record.pluck(edge).each do |e|
-    edge_ip_arr = IPAddress::IPv4.new(e).hosts.map {|m| m.to_s}
-    if edge_ip_arr.include? (new_ip)
-      errors.add(edge, 'данный ip-адрес уже используется')
-      false
+  def used?(wan, edge, new_ip)
+  Record.where("#{edge.to_s}_network" => wan).pluck(edge).each do |e|
+      edge_ip = IPAddress::IPv4.new(e) # used edge ip or host
+      if (edge_ip.include? new_ip) || (new_ip.include? edge_ip)
+        errors.add(edge, 'данный ip-адрес уже используется')
+        false
+      end
     end
   end
 end
