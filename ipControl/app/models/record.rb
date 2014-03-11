@@ -25,12 +25,25 @@ class Record < ActiveRecord::Base
     # Количество хостов в подсети определяется как 2^(32-N)-2, где N — длина маски. 
     return false if sub.prefix < network.prefix
     if sub.prefix == 32
-      hosts.include? sub.address 
+      (hosts.include? sub.address) && method_name(sub.address, edge)
     else
       subnet = sub.hosts.map { |e| e.to_s  }
+      # return false unless (subnet - hosts).size == 0 # all subnet elements must be in the host array
+      # end
       (subnet - hosts).size == 0 # all subnet elements must be in the host array
-    end        
+    end       
   rescue
    errors.add(edge, 'неверно задан ip-адрес')
+  end
+end
+
+
+def method_name(new_ip, edge)
+  Record.pluck(edge).each do |e|
+    edge_ip_arr = IPAddress::IPv4.new(e).hosts.map {|m| m.to_s}
+    if edge_ip_arr.include? (new_ip)
+      errors.add(edge, 'данный ip-адрес уже используется')
+      false
+    end
   end
 end

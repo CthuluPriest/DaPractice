@@ -15,13 +15,13 @@ ActiveAdmin.register Record do
         column "Область", :oblast
         column "Район",:rayon
         column "Сельский совет", :sovet
-        column "Населенный пункт", :pynkt
-        column "Улица", :street
-        column "Номер дома", :house
-        column "Корпус", :korpus
-        column "Индекс", :post_index
-        column "Широта", :latitude
-        column "Долгота", :longtitude
+        # column "Населенный пункт", :pynkt
+        # column "Улица", :street
+        # column "Номер дома", :house
+        # column "Корпус", :korpus
+        # column "Индекс", :post_index
+        # column "Широта", :latitude
+        # column "Долгота", :longtitude
         # column "Описание", :description
         # column "Цель использования", :purpose
         # column "Межсетевой экран", :firewall
@@ -31,8 +31,8 @@ ActiveAdmin.register Record do
         # column "Технология подключения", :technology
         # column "Скорость подключения", :speed
         # column "Телефон привязки", :connection_phone
-        # column "CE", :ce
-        # column "PE", :pe
+        column "CE", :ce
+        column "PE", :pe
         # column "IP адрес/сеть", :ipadress
         # column "Видимость точек", :visibility
         # column "Контактный телефон", :contact_phone
