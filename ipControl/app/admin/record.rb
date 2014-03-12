@@ -11,10 +11,10 @@ ActiveAdmin.register Record do
 
         column "Наименование", :name
         column "Тип подразделения", :subdivision_type
-        column "Подразделение в одном здании", :subdivision_same_building
+        # column "Подразделение в одном здании", :subdivision_same_building
         column "Область", :oblast
         column "Район",:rayon
-        column "Сельский совет", :sovet
+        # column "Сельский совет", :sovet
         # column "Населенный пункт", :pynkt
         # column "Улица", :street
         # column "Номер дома", :house
@@ -23,17 +23,17 @@ ActiveAdmin.register Record do
         # column "Широта", :latitude
         # column "Долгота", :longtitude
         # column "Описание", :description
-        # column "Цель использования", :purpose
+        column "Цель использования", :purpose
         # column "Межсетевой экран", :firewall
         # column "Прокси", :proxy
         # column "VPN", :vpn
         # column "Антивирус", :antivirus
         # column "Технология подключения", :technology
-        # column "Скорость подключения", :speed
+        column "Скорость подключения", :speed
         # column "Телефон привязки", :connection_phone
-        column "CE", :ce
-        column "PE", :pe
-        # column "IP адрес/сеть", :ipadress
+        # column "CE", :ce
+        # column "PE", :pe
+        column "IP адрес/сеть", :ipadress
         # column "Видимость точек", :visibility
         # column "Контактный телефон", :contact_phone
         # column "Тариф", :tarifff
@@ -48,23 +48,23 @@ ActiveAdmin.register Record do
     # filter :subdivision_type, :label => "Подразделение в одном здании"
     filter :oblast, :label => "Область"
     filter :rayon, :label => "Район"
-    filter :sovet, :label => "Сельский совет"
-    filter :pynkt, :label => "Населенный пункет"
-    filter :street, :label => "Улица"
-    filter :latitude, :label => "Широта"
-    filter :longtitude, :label => "Долгота"
+    # filter :sovet, :label => "Сельский совет"
+    # filter :pynkt, :label => "Населенный пункет"
+    # filter :street, :label => "Улица"
+    # filter :latitude, :label => "Широта"
+    # filter :longtitude, :label => "Долгота"
     # filter :description, :label => "Описание"
-    # filter :purpose, :label => "Цель использования"
+     filter :purpose, :label => "Цель использования"
     # filter :firewall, :label => "Межсетевой экран"
     # filter :proxy, :label => "Прокси-сервер"
     # filter :vpn, :label => "VPN"
     # filter :antivirus, :label => "Антивирус"
     # filter :technology, :label => "Технология подключения"
-    # filter :speed, :label => "Скорость"
+     filter :speed, :label => "Скорость"
     # filter :connection_phone, :label => "Телефон подключения"
     # filter :ce, :label => "СЕ"
     # filter :pe, :label => "РЕ"
-    # filter :ipadress, :label => "IP адрес/сеть"
+     filter :ipadress, :label => "IP адрес/сеть"
     # filter :visibility, :label => "Видимость точек"
     # filter :contact_phone, :label => "Контактный телефон"
     # filter :tarifff, :label => "Тариф"

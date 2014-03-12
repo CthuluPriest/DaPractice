@@ -3,8 +3,33 @@ class Record < ActiveRecord::Base
             :pynkt, :street, :house, :post_index, :purpose, :technology, :tarifff, :provider, :ce_network, :pe_network, presence: true
   
   validates :ce, :pe, presence: true, uniqueness: true
+  validates :post_index, :numericality => {:greater_than => 0, :less_than => 1000000}
+  validates :latitude, :numericality => {:greater_than_or_equal_to => -90, :less_than_or_equal_to => 90}, :allow_blank => true
+  validates :latitude, :numericality => {:greater_than_or_equal_to => -180, :less_than_or_equal_to => 180}, :allow_blank => true
+
   validate :correct_subnetwork
 
+      
+      # t.integer :post_index, null: false
+      # t.float :latitude
+      # t.float :longtitude
+      # t.string :description
+      # t.string :purpose, null: false
+      # t.string :firewall
+      # t.string :proxy
+      # t.string :vpn
+      # t.string :antivirus
+      # t.string :technology, null: false
+      # t.integer :speed
+      # t.string :connection_phone
+      # t.string :ce
+      # t.string :pe
+      # t.string :ipadress
+      # t.string :visibility
+      # t.string :contact_phone
+      # t.string :tarifff,null: false
+      # t.string :provider, null: false
+      # t.string :details
   private
 
   def correct_subnetwork
